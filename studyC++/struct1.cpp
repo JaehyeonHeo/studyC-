@@ -15,11 +15,13 @@ struct Human {
 	int age; 
 	char btype;
 
-	void view() {
-		printf("나의 이름 : %s\n키 : %f\n몸무게 : %f\n나이 : %d\n혈액형 : %c\n"
-			,name, height, weight, age, btype);
-	}
+	void view();
 };
+
+void Human::view() {
+	printf("나의 이름 : %s\n키 : %f\n몸무게 : %f\n나이 : %d\n혈액형 : %c\n"
+		, name, height, weight, age, btype);
+}
 
 int main()
 {
