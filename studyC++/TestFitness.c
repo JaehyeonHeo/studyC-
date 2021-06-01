@@ -6,7 +6,7 @@
 */
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
 /*구조체 정의*/
 typedef struct {
@@ -31,27 +31,38 @@ int main(void)
 {
 	Fitness *member[100];
 	int i; 
+	int temp;
+
 	for (i = 0; i < 100; i++)
 	{
-		member[i] = (Fitness*)malloc(sizeof(Fitness));
 		printf("\n<<회원 정보를 입력하세요>>");
 		printf("\n* 회원 번호 : ");
-		scanf("%d", &member[i]->num);
-		if (member[i]->num < 0) break;
-		printf("\n* 회원 이름 : ");
-		scanf(" %s", &member[i]->name);
-		printf("\n* 몸무게 : ");
-		scanf("%lf", &member[i]->weight);
+		scanf("%d", &temp);
+		if (temp > 0)
+		{
+			member[i] = (Fitness*)malloc(sizeof(Fitness));
+			if (member[i] != NULL)
+			{
+				member[i]->num = temp;
+				printf("\n* 회원 이름 : ");
+				scanf("%s", &member[i]->name);
+				printf("\n* 몸무게 : ");
+				scanf("%lf", &member[i]->weight);
+			}
+			else {
+				printf("메모리 동적할당 실패");
+			}
+		}
+		else break; 
 	}
 	int count = i; 
 	double average;
 	int maxW_idx; 
-
-	//printf("%.2lf", member[0]->weight); 
+	
 	total_number(count);     // 전체 회원수 출력 
 
 	average = average_weight(member, count); // 평균체중 할당
-	printf("\n평균체중 : %lf\n", average); 
+	printf("\n<<평균체중>>\n=> %.2lf kg\n", average); 
 
 	maxW_idx = max_weight(member, count); // 최대 체중 회원의 인덱스 할당
 	print_info(member, maxW_idx); 
@@ -63,8 +74,8 @@ int main(void)
 /*전체 등록 회원수 반환*/
 void total_number(int count)
 {
-	printf("===================================================\n");
-	printf("\n전체 회원수 : %d명\n", count);
+	printf("==================결 과 출 력====================\n");
+	printf("\n<<전체 회원수>>\n=> %d명\n", count);
 }
 
 /*평균 체중 반환*/
@@ -101,18 +112,19 @@ int max_weight(Fitness** pmember, int count)
 /*index로 회원 정보 출력*/
 void print_info(Fitness** pmember, int index)
 {
-	printf("<<해당 회원의 정보>>\n"); 
+	printf("\n<<최고 체중 회원의 정보>>\n"); 
 	printf("*회원번호 : %d\n", pmember[index]->num);
 	printf("*회원이름 : %s\n", pmember[index]->name);
-	printf("*회원몸무게 : %lf\n", pmember[index]->weight);
+	printf("*회원몸무게 : %.2lf\n", pmember[index]->weight);
 }
 
 
 /*메모리 해제 함수*/
-void free_ary(Fitness* member, int count)
+void free_ary(Fitness** member, int count)
 {
-	for (int i = 0; i < count + 1; i++)   // 회원수 + 1 만큼 해제 -> 마지막에 음수 넣은 회원값까지 해제하기 위해서!
+	for (int i = 0; i < count+1; i++)
 	{
 		free(member[i]);
 	}
+	printf("\n\ncount : %d", count); 
 }

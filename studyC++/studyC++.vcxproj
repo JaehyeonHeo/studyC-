@@ -19,6 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="cursor.h" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="TestFitness.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
