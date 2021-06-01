@@ -16,7 +16,7 @@ typedef struct {
 }Fitness;
 
 /*함수 선언*/
-void free_ary(Fitness*, int count); 
+void free_ary(Fitness**, int count); 
 
 void total_number(int count); 
 
@@ -120,11 +120,10 @@ void print_info(Fitness** pmember, int index)
 
 
 /*메모리 해제 함수*/
-void free_ary(Fitness** member, int count)
+void free_ary(Fitness** pmember, int count)
 {
-	for (int i = 0; i < count+1; i++)
+	for (int i = 0; i < count; i++)
 	{
-		free(member[i]);
+		free(pmember[i]);
 	}
-	printf("\n\ncount : %d", count); 
 }
