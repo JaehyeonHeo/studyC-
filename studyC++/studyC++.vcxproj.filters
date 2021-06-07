@@ -20,7 +20,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="자료구조test.c">
+    <ClCompile Include="NonTypeArgument.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
