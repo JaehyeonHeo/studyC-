@@ -22,7 +22,7 @@
     <ClInclude Include="cursor.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="tryctor.cpp" />
+    <ClCompile Include="MemPtrInherit.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
