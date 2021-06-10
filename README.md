@@ -1,7 +1,6 @@
 # ✅ Study_C++ ✅
 ```
 고스톱 프로그램 만들기 
-
 ```
 ![고스톱 프로그램](https://raw.githubusercontent.com/JaehyeonHeo/studyC-pp/db807c851a0b6a0a3aab89ce850de46d984d3cb2/image/gostop.png "실행화면")
 
