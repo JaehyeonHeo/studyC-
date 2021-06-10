@@ -22,7 +22,7 @@
     <ClInclude Include="cursor.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MemPtrInherit.cpp" />
+    <ClCompile Include="벡터3.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
